@@ -1,7 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+}
+
 .game-container {
   width: 500px;
   height: 730px;
   position: absolute;
+}
+
+.border-left {
+  width: 80px;
+  height: 730px;
+  position: absolute;
+  background-color: white;
+  z-index: 2;
+}
+
+.border-right {
+  width: 80px;
+  height: 730px;
+  position: absolute;
+  background-color: white;
+  z-index: 2;
+  left: 500px;
 }
 
 .sky {
@@ -17,18 +45,27 @@
   height: 150px;
   position: absolute;
   top: 580px;
+  z-index: +1;
 }
 
-.planaria{
-    background-color: yellow;
-    position: absolute;
-    width: 60px;
-    height: 45px;
+.planaria {
+  background-color: yellow;
+  position: absolute;
+  width: 60px;
+  height: 45px;
 }
 
-.obstacle{
-    background-color: green;
-    width: 60px;
-    height: 300px;
-    position: absolute;
+.obstacle {
+  background-color: green;
+  width: 60px;
+  height: 300px;
+  position: absolute;
+}
+
+.topObstacle {
+  background-color: green;
+  transform: rotate(180deg);
+  width: 60px;
+  height: 300px;
+  position: absolute;
 }
