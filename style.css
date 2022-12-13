@@ -11,13 +11,13 @@ body {
 
 .game-container {
   width: 500px;
-  height: 730px;
+  height: 700px;
   position: absolute;
 }
 
 .border-left {
   width: 80px;
-  height: 730px;
+  height: 100%;
   position: absolute;
   background-color: white;
   z-index: 2;
@@ -25,7 +25,7 @@ body {
 
 .border-right {
   width: 80px;
-  height: 730px;
+  height: 100%;
   position: absolute;
   background-color: white;
   z-index: 2;
@@ -40,19 +40,23 @@ body {
 }
 
 .ground {
-  background-color: brown;
+  background: url("chão.png") no-repeat;
   width: 500px;
-  height: 150px;
+  height: 260px;
   position: absolute;
-  top: 580px;
+  background-size: cover;
+  object-fit: cover;
+  top: 476px;
   z-index: +1;
 }
 
 .planaria {
-  background-color: yellow;
+  background: url("planaria.png") no-repeat;
   position: absolute;
   width: 60px;
-  height: 45px;
+  height: 55px;
+  background-size: 60px;
+  object-fit: contain;
 }
 
 .obstacle {

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const ground = document.querySelector(".ground");
 
   let planariaLeft = 220;
-  let planariaBottom = 100;
+  let planariaBottom = 250;
   let gravity = 2;
   let isGameOver = false;
   let gap = 430;
@@ -62,11 +62,13 @@ document.addEventListener("DOMContentLoaded", () => {
         (obstacleLeft > 200 &&
           obstacleLeft < 280 &&
           planariaLeft === 220 &&
-          (planariaBottom < obstacleBottom + 151 || planariaBottom > obstacleBottom + gap - 200)) ||
+          (planariaBottom < obstacleBottom + 151 ||
+            planariaBottom > obstacleBottom + gap - 200)) ||
         planariaBottom === 0
       ) {
         gameOver();
         clearInterval(timerId);
+        showAlert();
       }
     }
     let timerId = setInterval(moveObstacle, 20);
@@ -80,4 +82,23 @@ document.addEventListener("DOMContentLoaded", () => {
     isGameOver = true;
     document.removeEventListener("keyup", control);
   }
+
+  function restartPress() {
+    window.location.reload();
+  }
+
+  function showAlert() {
+    var result = confirm(
+      "Você perdeu, mas pode tentar novamente! :) Pressione OK para recomeçar"
+    );
+    if (result) {
+      restartPress();
+    }
+  }
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "R" || event.key === "r") {
+      window.location.reload();
+    }
+  });
 });
