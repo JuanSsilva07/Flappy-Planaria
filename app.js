@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let planariaLeft = 220;
   let planariaBottom = 250;
-  let gravity = 2;
+  let gravity = 3;
   let isGameOver = false;
   let gap = 430;
   let timerVelocity = 1;
@@ -60,12 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
         gameDisplay.removeChild(topObstacle);
       }
       if (
-        (obstacleLeft > 200 &&
-          obstacleLeft < 280 &&
+        (obstacleLeft > 140 &&
+          obstacleLeft < 220 &&
           planariaLeft === 220 &&
-          (planariaBottom < obstacleBottom + 230 ||
+          (planariaBottom < obstacleBottom + 200 ||
             planariaBottom > obstacleBottom + gap - 108)) ||
-        planariaBottom === 100
+        planariaBottom === 80
       ) {
         gameOver();
         clearInterval(timerId);
