@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keyup", control);
 
   function generationObstacles() {
-    let obstacleLeft = 1280;
+    let obstacleLeft = 1250;
     let randomHeight = Math.random() * 80;
     let obstacleBottom = randomHeight;
     const obstacle = document.createElement("div");
