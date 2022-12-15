@@ -10,12 +10,12 @@ body {
 }
 
 .game-container {
-  width: 500px;
-  height: 700px;
+  width: 100vw;
+  height: 100%;
   position: absolute;
 }
 
-.border-left {
+/* .border-left {
   width: 80px;
   height: 100%;
   position: absolute;
@@ -29,24 +29,27 @@ body {
   position: absolute;
   background-color: white;
   z-index: 2;
-  left: 500px;
-}
+  left: 900px;
+} */
 
 .sky {
-  background-color: lightblue;
-  width: 500px;
+  background: url(oceano.jpg) no-repeat;
+  background-size: cover;
+  width: 100vw;
   height: 580px;
   position: absolute;
+  object-fit: cover;
 }
 
 .ground {
-  background: url("chão.png") no-repeat;
-  width: 500px;
-  height: 260px;
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgb(170, 168, 87) 0%, rgba(199,226,139,1) 100%);
+  width: 100vw;
+  height: 158.5px;
   position: absolute;
   background-size: cover;
   object-fit: cover;
-  top: 476px;
+  top: 490px;
   z-index: +1;
 }
 
@@ -60,16 +63,20 @@ body {
 }
 
 .obstacle {
-  background-color: green;
-  width: 60px;
+  background: url(piranha.png) no-repeat;
+  width: 90px;
   height: 300px;
   position: absolute;
+  background-size: 120px 200px;
+  object-fit: contain;
 }
 
 .topObstacle {
-  background-color: green;
+  background: url(piranha.png) no-repeat;
   transform: rotate(180deg);
-  width: 60px;
+  width: 90px;
   height: 300px;
   position: absolute;
+  background-size: 120px 200px;
+  object-fit: contain;
 }

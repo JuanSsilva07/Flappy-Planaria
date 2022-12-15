@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let gravity = 2;
   let isGameOver = false;
   let gap = 430;
+  let timerVelocity = 1;
 
   function startGame() {
     planariaBottom -= gravity;
@@ -32,8 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keyup", control);
 
   function generationObstacles() {
-    let obstacleLeft = 500;
-    let randomHeight = Math.random() * 60;
+    let obstacleLeft = 1280;
+    let randomHeight = Math.random() * 80;
     let obstacleBottom = randomHeight;
     const obstacle = document.createElement("div");
     const topObstacle = document.createElement("div");
@@ -62,17 +63,19 @@ document.addEventListener("DOMContentLoaded", () => {
         (obstacleLeft > 200 &&
           obstacleLeft < 280 &&
           planariaLeft === 220 &&
-          (planariaBottom < obstacleBottom + 151 ||
-            planariaBottom > obstacleBottom + gap - 200)) ||
-        planariaBottom === 0
+          (planariaBottom < obstacleBottom + 230 ||
+            planariaBottom > obstacleBottom + gap - 108)) ||
+        planariaBottom === 100
       ) {
         gameOver();
         clearInterval(timerId);
         showAlert();
       }
     }
-    let timerId = setInterval(moveObstacle, 20);
-    if (!isGameOver) setTimeout(generationObstacles, 3000);
+
+    let timerId = setInterval(moveObstacle, timerVelocity);
+
+    if (!isGameOver) setTimeout(generationObstacles, 2000);
   }
   generationObstacles();
 
